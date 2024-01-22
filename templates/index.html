@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Downloader</title>
+    <!-- favicon -->
+    <link rel="icon" href="../favicon_io/favicon.ico" type="image/x-icon">
+
+    <!-- font_awesome library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+
+
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif;
+            transition: background-color 0.5s, color 0.5s;
+            text-align: center;
+            /* margin: 60px; */
+            background-blend-mode: color;
+        }
+        p{
+            color: rgba(48, 114, 245, 0.586);
+            font-size: x-small;
+            font:medium;
+            font-family: Courier , Courier, monospace, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        #container {
+            padding: auto;
+            width: 80% ;
+            margin: 10% auto 10% auto;
+            /* border: 1px solid red; */
+            
+        }
+        form{
+            /* border: 1px solid red; */
+            margin: auto;
+        }
+
+        #inputField {
+            width: 60% !important;
+            padding: 15px 30px;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-family: 'Courier New', Courier;
+            background-color: #aee8f74c;
+            border: none;
+            border-radius: 20px;
+            font-size: smaller;
+            text-align: center;
+
+        }
+
+        #submitButton {
+            border: none;
+            border-radius: 20px;
+            padding: 13px;
+            cursor: pointer;
+            color:#ffffff;
+            background-color: #4ea819;
+            margin: 15px;
+            font: 1em sans-serif;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            width:20%;
+
+        }
+
+        /* spinning Icon */
+        /* #themeSwitcher {
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0);
+            color:#ff800a ;
+            margin-left: 70%;
+
+        } */
+
+        /* Dark Mode */
+        body.dark-mode {
+            background-color: #141414;
+            color: #ffffff;
+            
+        }
+
+        /* Light Mode */
+        body.light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .toggle-container {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: 20px;
+            /* border: 2px solid red; */
+            margin-left: 80%;
+            width: 10%;
+            padding: 1%;
+        }
+
+        .toggle-label {
+            margin-right: 10px;
+            width: auto;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            ;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #b9b9ac60;
+            transition: background-color 0.4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: #0866ff;
+            transition: transform 0.4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+            background-color: white ;
+        }
+
+        input:checked + .slider {
+            background-color: #0866ff ;
+            
+        }
+
+
+        msg{
+            color:rgba(227, 39, 39, 0.598);
+            font-family: Impact, 'Courier New', Courier, monospace,'Open Sans', 'Helvetica Neue';
+            font-size: x-small;
+        }
+        @media only screen and (max-width: 500px) {
+            body {
+                background-color: lightblue;
+                /* border:2px solid red; */
+                width:100%;
+                margin:auto ;
+            }
+            #submitButton{
+                border-radius: 20px;
+                padding: 13px;
+                margin: 15px;
+                width:auto;
+                font-size: small;
+            }
+            form{
+                width: 100%;
+                /* border:2px solid red; */
+
+            }
+            .toggle-container {
+                width: 15%;
+                padding: 1%;
+            }
+        }
+
+
+        /* signature */
+
+        .signature {
+            padding: 20px;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            /* background-color: #f0f0f0; */
+            font-size: xx-small;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        @media only screen and (max-width: 1200px) {
+            body {
+                background-color: lightblue;
+                /* border:2px solid red; */
+                width:100%;
+                margin:auto ;
+            }
+            #submitButton{
+                border-radius: 20px;
+                padding: 13px;
+                margin: 15px;
+                width:auto;
+                font-size: small;
+            }
+            form{
+                width: 100%;
+                /* border:2px solid red; */
+
+            }
+        }
+    </style>
+
+    
+</head>
+<body class="light-mode">
+    <header>
+        <h1>YᴏᴜTᴜʙᴇ Vɪᴅᴇᴏ/Aᴜᴅɪᴏ Dᴏᴡɴʟᴏᴀᴅᴇʀ</h1>
+    </header>
+    <!-- toggle-container -->
+    <div class="toggle-container">
+
+        <i id="logo" class='fa-solid fa-sun fa-xl'></i>            
+        <label class="toggle-switch">
+            <input type="checkbox" id="toggle">
+            <span class="slider"></span>
+        </label>
+        
+    </div>
+
+
+    <div id="container">
+        <!--  spinning Icon  -->
+        <!-- <i class="fa fa-cog fa-spin" id="themeSwitcher" onclick="toggleTheme()" aria-hidden="true"></i> -->
+        <!-- <button id="submitButton">Click me!</button> -->
+
+        <form action="{{ url_for('download') }}" method="post">
+            <label for="url"><p>With just one click, you may instantly download <br>
+                any random YouTube video or audio.</p></label>
+            <input type="text" id="inputField" placeholder="Type here your youTube-link" name="url" required>
+            <button type="submit" onclick="submitForm()" id="submitButton">Download</button>
+        </form>
+        {% if message %}
+            <msg>{{ message }}</msg>
+        {% endif %}
+
+        
+    </div>
+    <footer >
+        <!-- <i>
+            
+            <span >©</span> 2024,<samp> <b>SouRav</b> with 💖</samp>
+        </i> -->
+        <div class="signature">
+                <p>Created with ❤️ by <b><a href="https://github.com/sou-rav-23" target="_blank">SouRav</a></b></p>
+                <p>&copy; 2024 youTube_downloader. All rights reserved.</p>
+        </div>
+        
+    </footer>
+
+       
+    <script>
+        function submitForm() {
+            var message = document.querySelector('msg').textContent;
+            console.log("msg",message);
+            if(message == "Downloaded successful!"){
+
+                alert('     Downloading...🔃     ');
+            }else{
+                alert(message);
+            }
+        }
+
+        // function toggleTheme() {
+            //     document.body.classList.toggle('dark-mode');
+            //     document.body.classList.toggle('light-mode');
+            // }
+            
+        // <<<---- Day/Night toggle ---->>>
+        const toggleSwitch = document.getElementById('toggle');
+
+        const logo = document.getElementById('logo');
+        
+        
+        function view_mode(){
+            document.body.classList.toggle('dark-mode');
+            document.body.classList.toggle('light-mode');
+            
+
+            if(logo.className == 'fa-solid fa-sun fa-xl'){
+                logo.className = 'fa-solid fa-moon fa-xl';
+            }
+            else{
+                logo.className = 'fa-solid fa-sun fa-xl ';
+            }
+        };
+        
+        toggleSwitch.addEventListener('change', () => {
+            view_mode();
+        });
+        
+
+
+
+        
+    </script>
+
+
+    
+</body>
+</html>
