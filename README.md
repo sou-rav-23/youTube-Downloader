@@ -2,16 +2,15 @@
 
 ## And make sure to install Flask and Pytube in your Terminal  by using following commands:
 
-Flask : 
+`🔵 Flask  :⤵️    ` 
 ```code
     pip install Flask pytube
 ```
 
-pyTube : 
+`🟡   pyTube  :⤵️    ` 
 ```code
     pip install pytube
-    
-```
+ ```
 
 
 ## Then, run the following command in your terminal: 
