@@ -280,6 +280,7 @@
             }
         }
 
+        // # Method : 1 (change mode)
         // function toggleTheme() {
             //     document.body.classList.toggle('dark-mode');
             //     document.body.classList.toggle('light-mode');
@@ -290,7 +291,12 @@
 
         const logo = document.getElementById('logo');
         
+        toggleSwitch.addEventListener('change', () => {
+            view_mode();
+        });
         
+
+        // # Method : 2 (change mode also change logo)
         function view_mode(){
             document.body.classList.toggle('dark-mode');
             document.body.classList.toggle('light-mode');
@@ -299,21 +305,18 @@
             if(logo.className == 'fa-solid fa-sun fa-xl'){
                 logo.className = 'fa-solid fa-moon fa-xl';
             }
-            else{
-                logo.className = 'fa-solid fa-sun fa-xl ';
+            else if(logo.className = 'fa-solid fa-moon fa-xl'){
+                logo.className = 'fa-solid fa-sun fa-xl';
+                
             }
         };
         
-        toggleSwitch.addEventListener('change', () => {
-            view_mode();
-        });
         
 
 
 
         
     </script>
-
 
     
 </body>
