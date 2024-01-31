@@ -6,6 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('index.html')
+    return render_template('./style/index.css')
 
 @app.route('/download', methods=['POST'])
 def download():
