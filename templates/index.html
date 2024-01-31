@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube Downloader</title>
+    
     <!-- favicon -->
     <link rel="icon" href="../favicon_io/favicon.ico" type="image/x-icon">
 
+   
     <!-- font_awesome library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-
-
     <style>
         body {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif;
@@ -24,7 +24,7 @@
         p{
             color: rgba(48, 114, 245, 0.586);
             font-size: x-small;
-            font: medium;
+            font:medium;
             font-family: Courier , Courier, monospace, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
@@ -32,13 +32,15 @@
             padding: auto;
             width: 80% ;
             margin: 10% auto 10% auto;
-            /* border: 1px solid red; */
-            
+            /* width: 50%;
+            margin: auto; */
         }
+
         form{
-            /* border: 1px solid red; */
-            margin: auto;
-        }
+                width: 100%;
+                /* border:2px solid red; */
+
+            }
 
         #inputField {
             width: 60% !important;
@@ -51,7 +53,9 @@
             border-radius: 20px;
             font-size: smaller;
             text-align: center;
-
+            /* width: 80%;
+            padding: 10px;
+            margin-bottom: 10px; */
         }
 
         #submitButton {
@@ -65,29 +69,11 @@
             font: 1em sans-serif;
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             width:20%;
-
-        }
-
-        /* spinning Icon */
-        /* #themeSwitcher {
             cursor: pointer;
-            background-color: rgba(255, 255, 255, 0);
-            color:#ff800a ;
-            margin-left: 70%;
-
-        } */
-
-        /* Dark Mode */
-        body.dark-mode {
-            background-color: #141414;
-            color: #ffffff;
-            
         }
 
-        /* Light Mode */
-        body.light-mode {
-            background-color: #ffffff;
-            color: #000000;
+        #popup{
+            color:rgb(122, 222, 6)
         }
         .toggle-container {
             display: flex;
@@ -110,15 +96,16 @@
             display: inline-block;
             width: 60px;
             height: 34px;
-            ;
+            /* border: 2px solid red; */
+
         }
 
         .toggle-switch input {
             opacity: 0;
             width: 0;
             height: 0;
+            /* border: 20px solid red; */
         }
-
         .slider {
             position: absolute;
             cursor: pointer;
@@ -129,6 +116,7 @@
             background-color: #b9b9ac60;
             transition: background-color 0.4s;
             border-radius: 34px;
+            /* border: 2px solid red; */
         }
 
         .slider:before {
@@ -142,7 +130,17 @@
             transition: transform 0.4s;
             border-radius: 50%;
         }
+        body.dark-mode {
+            background-color: #141414;
+            color: #ffffff;
+            
+        }
 
+        /* Light Mode */
+        body.light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
         input:checked + .slider:before {
             transform: translateX(26px);
             background-color: white ;
@@ -152,13 +150,19 @@
             background-color: #0866ff ;
             
         }
+        /* signature */
 
-
-        msg{
-            color:rgba(227, 39, 39, 0.598);
-            font-family: Impact, 'Courier New', Courier, monospace,'Open Sans', 'Helvetica Neue';
-            font-size: x-small;
+        .signature {
+            padding: 20px;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            /* background-color: #f0f0f0; */
+            font-size: xx-small;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #888;
         }
+
         @media only screen and (max-width: 500px) {
             body {
                 background-color: lightblue;
@@ -179,24 +183,23 @@
 
             }
             .toggle-container {
-                width: 15%;
+                /* width: 15%; */
+                width: auto;
                 padding: 1%;
+            }
+            .toggle-switch {
+                width: 29%;
+            }
+            .slider{
+                width: auto;
+            }
+            .slider:before{
+                width: auto;
             }
         }
 
 
-        /* signature */
-
-        .signature {
-            padding: 20px;
-            text-align: center;
-            font-family: 'Arial', sans-serif;
-            /* background-color: #f0f0f0; */
-            font-size: xx-small;
-            margin-top: 30px;
-            font-size: 14px;
-            color: #888;
-        }
+        
 
         @media only screen and (max-width: 1200px) {
             body {
@@ -217,19 +220,33 @@
                 /* border:2px solid red; */
 
             }
+            .toggle-container {
+                /* width: 15%; */
+                width: auto;
+                padding: 1%;
+            }
+            .toggle-switch {
+                width: 29%;
+            }
+            .slider{
+                width: auto;
+            }
+            .slider:before{
+                width: auto;
+            }
         }
+        
     </style>
-
-    
 </head>
 <body class="light-mode">
     <header>
-        <h1>YᴏᴜTᴜʙᴇ Vɪᴅᴇᴏ/Aᴜᴅɪᴏ Dᴏᴡɴʟᴏᴀᴅᴇʀ</h1>
+        <h1>YᴏᴜTᴜʙᴇ Aᴜᴅɪᴏ/Vɪᴅᴇᴏ Dᴏᴡɴʟᴏᴀᴅᴇʀ</h1>
+        <p style="color:rgb(54, 152, 30)"></p>
     </header>
     <!-- toggle-container -->
     <div class="toggle-container">
-
-        <i id="logo" class='fa-solid fa-sun fa-xl'></i>            
+        
+        <i id="logo" class='fa-solid fa-moon fa-xl'></i>            
         <label class="toggle-switch">
             <input type="checkbox" id="toggle">
             <span class="slider"></span>
@@ -237,56 +254,99 @@
         
     </div>
 
-
     <div id="container">
-        <!--  spinning Icon  -->
-        <!-- <i class="fa fa-cog fa-spin" id="themeSwitcher" onclick="toggleTheme()" aria-hidden="true"></i> -->
-        <!-- <button id="submitButton">Click me!</button> -->
+        <form action="">
 
-        <form action="{{ url_for('download') }}" method="post">
-            <label for="url"><p>With just one click, you may instantly download <br>
-                any random YouTube video or audio.</p></label>
-            <input type="text" id="inputField" placeholder="Type here your youTube-link" name="url" required>
-            <button type="submit" onclick="submitForm()" id="submitButton">Download</button>
+            <label for="inputField" ></label>
+            <input type="text" id="inputField" placeholder="Enter youTube[audio/video] Link ">
+    
+            <button id="submitButton" onclick="downloadVideo()">Download</button>
+
         </form>
-        {% if message %}
-            <msg>{{ message }}</msg>
-        {% endif %}
-
-        
     </div>
+
+    <!-- Popup div -->
+    <div id="popup">
+        <p><h3 id="popupMessage"> </h3></p>
+    </div>
+
+
     <footer >
-        <!-- <i>
-            
-            <span >©</span> 2024,<samp> <b>SouRav</b> with 💖</samp>
-        </i> -->
         <div class="signature">
-                <p>Created with ❤️ by <b><a href="https://github.com/sou-rav-23" target="_blank">SouRav</a></b></p>
+                <p>
+                    Created with ❤️ by 
+                    <b>
+                        <a href="https://github.com/sou-rav-23" style="font-family: Verdana, Geneva, Tahoma;color: rgb(10, 129, 209); text-decoration: none;" target="_blank"><i>SouRav</i>
+                        </a>
+                    </b>
+                </p>
+                <p >
+                    Check repository :- 
+                    <a href="https://github.com/sou-rav-23/youTube-Downloader"
+                        style="font-family: Verdana, Geneva, Tahoma;color: orange; text-decoration: none;" target="_blank"> click !!
+                    </a>
+                </p>
                 <p>&copy; 2024 youTube_downloader. All rights reserved.</p>
         </div>
         
     </footer>
 
-       
-    <script>
-        function submitForm() {
-            var message = document.querySelector('msg').textContent;
-            console.log("msg",message);
-            if(message == "Downloaded successful!"){
 
-                alert('     Downloading...🔃     ');
-            }else{
-                alert(message);
-            }
+    <script>
+        function showPopup(message="") {
+            var popup = document.querySelector('#popup');
+            var popupMessage = document.querySelector('#popupMessage');
+            popupMessage.innerHTML = message;
+            popup.style.display = 'block';
+            
+            setTimeout(closePopup, 5000);
         }
 
-        // # Method : 1 (change mode)
-        // function toggleTheme() {
-            //     document.body.classList.toggle('dark-mode');
-            //     document.body.classList.toggle('light-mode');
-            // }
+        function closePopup() {
+            var popup = document.getElementById('popup');
+            var popupMessage = document.querySelector('#popupMessage');
+            popup.style.display = 'block';
+            popupMessage.innerHTML = "";
             
-        // <<<---- Day/Night toggle ---->>>
+        }
+        
+        function downloadVideo() {
+            event.preventDefault()
+            const videoLink = document.getElementById('inputField').value;
+            
+            if (videoLink.trim() === "") {
+                // alert("Please enter a valid YouTube video link.");
+                showPopup("Please enter a valid YouTube video link.")
+                setTimeout(closePopup, 2000);
+                return;
+            }
+
+            fetch('/download', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'video_link=' + encodeURIComponent(videoLink),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("data : - ", data)
+                console.log("data.success : - ", data.success)
+                if (data.success) {
+                    // Show popup
+                    showPopup('Video downloaded successfully!');
+                    
+                    
+                } else {
+                    // Show popup with error message
+                    showPopup('Error: ' + data.error);
+                }
+            })
+            .catch(error => {
+                showPopup('Error: ' + data.error);                console.error('Error:', error);
+            });
+        }
+
         const toggleSwitch = document.getElementById('toggle');
 
         const logo = document.getElementById('logo');
@@ -298,9 +358,9 @@
 
         // # Method : 2 (change mode also change logo)
         function view_mode(){
-            document.body.classList.toggle('dark-mode');
             document.body.classList.toggle('light-mode');
-            
+            document.body.classList.toggle('dark-mode');
+
 
             if(logo.className == 'fa-solid fa-sun fa-xl'){
                 logo.className = 'fa-solid fa-moon fa-xl';
@@ -310,14 +370,12 @@
                 
             }
         };
-        
-        
 
+        function reload(){
+            window.location.reload();
+        }
 
-
-        
     </script>
 
-    
 </body>
 </html>
