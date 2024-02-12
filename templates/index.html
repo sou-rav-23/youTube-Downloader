@@ -291,6 +291,9 @@
 
 
     <script>
+        function re_load(){
+            window.location.reload();
+        }
         function showPopup(message="") {
             var popup = document.querySelector('#popup');
             var popupMessage = document.querySelector('#popupMessage');
@@ -298,13 +301,19 @@
             popup.style.display = 'block';
             
             setTimeout(closePopup, 5000);
+            
         }
 
         function closePopup() {
-            var popup = document.getElementById('popup');
-            var popupMessage = document.querySelector('#popupMessage');
-            popup.style.display = 'block';
-            popupMessage.innerHTML = "";
+            // # Method-1 : set popup string to an empty string
+            // var popup = document.getElementById('popup');
+            // var popupMessage = document.querySelector('#popupMessage');
+            // popup.style.display = 'block';
+            // popupMessage.innerHTML = "";
+
+
+            // # Method-2 : window reloading
+            re_load()
             
         }
         
@@ -316,6 +325,7 @@
                 // alert("Please enter a valid YouTube video link.");
                 showPopup("Please enter a valid YouTube video link.")
                 setTimeout(closePopup, 2000);
+                // reload()
                 return;
             }
 
@@ -369,11 +379,8 @@
             }
         };
 
-        function reload(){
-            window.location.reload();
-        }
+        
 
     </script>
-
 </body>
 </html>
