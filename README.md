@@ -4,17 +4,19 @@
 ### To begin downloading any YouTube video or audio, clone this repository onto your computer.
 
 ### And make sure to install Python in your system 
-#### <i>Also install Flask framework and Pytube library in your folder Terminal by using the below commands:</i>
+#### <i>Also, install the Pytube library and Flask framework in your folder terminal by using the below commands</i>
 
-`🔵 Flask  :⤵️    ` 
-```code
-    pip install Flask pytube
-```
 
 `🟡 pyTube  :⤵️    ` 
 ```code
     pip install pytube
  ```
+
+
+`🔵 Flask  :⤵️    ` 
+```code
+    pip install Flask pytube
+```
 
 
 ## Then, run the following command in your terminal: 
