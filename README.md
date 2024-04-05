@@ -15,6 +15,7 @@ This YouTube downloader app allows users to download audio/videos from YouTube u
 - Paste a YouTube audio/video URL.
 - Choose the desired video quality. <i>but, this time it downloads 720_px video and 128_byte audio to download</i>
 - Download the video save on your local machine.
+- Additionally, the website is highly responsive, fitting any display.
 
 ## Installation
 
