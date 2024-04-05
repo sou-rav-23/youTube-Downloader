@@ -2,7 +2,7 @@
 
 # YouTube Downloader App
 
-This YouTube downloader app allows users to download videos from YouTube using a simple web interface. It's built using a combination of technologies:
+This YouTube downloader app allows users to download audio/videos from YouTube using a simple web interface. It's built using a combination of technologies:
 
 1. **HTML**: Provides the structure and layout of the web pages.
 2. **CSS**: Styles the app, making it visually appealing.
@@ -21,8 +21,8 @@ This YouTube downloader app allows users to download videos from YouTube using a
 1.  ####   Clone this repository.
 
 2.  ####    Run the following command in the integrated terminal on this folder repo : 
-    #####    <i> And make sure to install Python in your system. <i/>
-3.  ####     <i>Also, install the Pytube library and Flask framework in your folder terminal by using the below commands.<i/>
+    #####    <i> And make sure to install Python in your system. </i>
+3.  ####     <i>Also, install the Pytube library and Flask framework in your folder terminal by using the below commands.</i>
 
 
     `🟡 pyTube     :⤵️    ` 
@@ -51,11 +51,11 @@ example:  `http://127.0.0.1:5000/` (5000 is my port number)
 
 ## Screenshots :-
 
-### Day Version :
-    <img align="center" src="https://raw.githubusercontent.com/sou-rav-23/youTube-Downloader/main/Assets/images/dark_mode.png?auto=format" width="100%"  />
+ normal_view :
+  <img align="right" src="https://raw.githubusercontent.com/sou-rav-23/youTube-Downloader/main/Assets/images/light_mode.png?auto=format" width="100%"  />
 
-### Night Version :
-    <img align="center" src="https://raw.githubusercontent.com/sou-rav-23/youTube-Downloader/main/Assets/images/light_mode.png?auto=format" width="100%"  />
+ night_vision :
+  <img align="right" src="https://raw.githubusercontent.com/sou-rav-23/youTube-Downloader/main/Assets/images/dark_mode.png?auto=format" width="100%"  />
 
 ---
 
